@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+body {
+    font-family: "JetBrains Mono", monospace;
+  
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    gap: 10px;
+}
+
+.score{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    background-color: rgb(63, 62, 62);
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    gap: 10px;
+    opacity: 0;
+    /* Initial state: hidden above the viewport and transparent */
+    transform: translateY(-100%);
+    opacity: 0;
+    /* Smooth transition for all animated properties */
+    transition: transform 1s ease-out, opacity 1s ease-out
+}
+.score.show{
+    transform: translateY(0);
+    opacity: 1;
+}
+.s{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    
+    background-color:white;
+    border-radius: 10px;
+
+}
+
+.main{
+    display: flex;
+        color: gray;    
+        flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 520px;
+    /* background-color: rgb(0, 0, 0); */
+       border-radius: 10px;
+
+
+             background-color: #000000; /* Dark navy background */
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+      background-size: 24px 24px; /* small square pattern */
+}
+.board {
+   width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    border-radius: 12px;
+    border: 3px solid #111;
+
+    /* dark checkerboard effect */
+    background-color: #0a0a0a;
+    background-image:
+        linear-gradient(to right, #111 1px, transparent 1px),
+        linear-gradient(to bottom, #111 1px, transparent 1px);
+    background-size: 20px 20px;
+
+    box-shadow: inset 0 0 20px #7d7d7d; /* subtle inner glow */
+
+
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: opacity 1s, visibility 1s
+}
+.board.show1{
+  visibility: visible;
+opacity: 1;
+
+}
+
+
+
+
+.snake {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+
+    /* light gray snake with slight neon glow */
+    background: #bbb;
+    box-shadow: 0 0 6px #bbb;
+}
+
+.food {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+
+    /* bright red food with glow */
+    background: #ff2a2a;
+    box-shadow: 0 0 8px #ff2a2a;
+}
